@@ -1,0 +1,55 @@
+import pygame
+
+pygame.init()
+
+# Screen setup
+screen = pygame.display.set_mode((600, 400))
+pygame.display.set_caption("Add Sprites Example")
+
+# Colors
+WHITE = (255, 255, 255)
+RED = (255, 0, 0)
+BLUE = (0, 0, 255)
+
+# Create Sprite 1 (movable)
+sprite1 = pygame.Surface((80, 80))
+sprite1.fill(RED)
+rect1 = sprite1.get_rect()
+rect1.topleft = (100, 150)
+
+# Create Sprite 2 (static)
+sprite2 = pygame.Surface((80, 80))
+sprite2.fill(BLUE)
+rect2 = sprite2.get_rect()
+rect2.topleft = (400, 150)
+
+# Movement speed
+speed = 5
+
+running = True
+while running:
+    pygame.time.delay(20)
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    # Key controls for sprite1
+    keys = pygame.key.get_pressed()
+
+    if keys[pygame.K_LEFT]:
+        rect1.x -= speed
+    if keys[pygame.K_RIGHT]:
+        rect1.x += speed
+    if keys[pygame.K_UP]:
+        rect1.y -= speed
+    if keys[pygame.K_DOWN]:
+        rect1.y += speed
+
+    # Draw everything
+    screen.fill(WHITE)
+    screen.blit(sprite1, rect1)
+    screen.blit(sprite2, rect2)
+    pygame.display.update()
+
+pygame.quit()

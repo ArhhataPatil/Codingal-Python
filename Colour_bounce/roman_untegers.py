@@ -1,0 +1,42 @@
+class IntegerToRoman:
+    def __init__(self, number):
+        self.number = number
+
+    def convert(self):
+        # Mapping of Roman numerals
+        roman_map = [
+            (1000, "M"),
+            (900, "CM"),
+            (500, "D"),
+            (400, "CD"),
+            (100, "C"),
+            (90, "XC"),
+            (50, "L"),
+            (40, "XL"),
+            (10, "X"),
+            (9, "IX"),
+            (5, "V"),
+            (4, "IV"),
+            (1, "I")
+        ]
+
+        num = self.number
+        roman_numeral = ""
+
+        for value, symbol in roman_map:
+            while num >= value:
+                roman_numeral += symbol
+                num -= value
+
+        return roman_numeral
+
+
+# Taking input from user
+number = int(input("Enter an integer (1-3999): "))
+
+if 1 <= number <= 3999:
+    converter = IntegerToRoman(number)
+    result = converter.convert()
+    print("Roman Numeral:", result)
+else:
+    print("Please enter a number between 1 and 3999.")
