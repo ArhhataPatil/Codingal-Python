@@ -1,0 +1,20 @@
+from tkinter import *
+
+root=Tk()
+root.title("Number Pad")
+root.geometry("250x300")
+
+#creat a list of the num
+
+nums=[[9,8,7],[6,5,4],[3,2,1],['#',0,'*']]
+for i in range(4):
+    #configure the rows/columns
+    root.columnconfigure(i, weight=1, minsize=50)
+    root.rowconfigure(i, weight=1, minsize=50)
+    for j in range(0,3):
+        frame = Frame(master=root,relief='flat', borderwidth=1)
+        frame.grid(row=i, column=j)
+        label=Label(master=frame, text=nums[i][j], bg='yellow', fg='magenta')
+        label.pack(padx=3, pady=3)
+#start the main loop
+root.mainloop()
