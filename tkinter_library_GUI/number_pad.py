@@ -14,7 +14,7 @@ for i in range(4):
     for j in range(0,3):
         frame = Frame(master=root,relief='flat', borderwidth=1)
         frame.grid(row=i, column=j)
-        label=Label(master=frame, text=nums[i][j], bg='yellow', fg='magenta')
+        label=Label(master=frame, text=nums[i][j], bg='navyblue', fg='lightblue')
         label.pack(padx=3, pady=3)
 #start the main loop
 root.mainloop()
