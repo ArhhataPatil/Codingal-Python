@@ -1,7 +1,7 @@
 from tkinter import *
 
 window = Tk()
-window.title("Getting Started with Widgets")
+window.title("Product Calculator")
 window.geometry("400x300")
 window.config(bg="#f55f8a")
 
@@ -25,7 +25,7 @@ Label(window, text="Enter Second Number:", bg="#f55f8a", fg="white").pack()
 e2 = Entry(window, bg="#f595a8")
 e2.pack(pady=5)
 
-Button(window, text="Calculate Product", command=calc, bg="#1e90ff", fg="white").pack(pady=10)
+Button(window, text="Calculate Product", command=calc, bg="#1e90ff", fg="Pink").pack(pady=10)
 
 result_display = Text(window, height=2, width=30, bg="#f595a8", fg="white")
 result_display.pack(pady=10)
